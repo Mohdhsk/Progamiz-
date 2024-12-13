@@ -1,0 +1,25 @@
+#include <iostream>
+#include <fstream>
+#include <cstdlib>
+#include <ctime>
+
+using namespace std;
+
+int main() {
+    // Seed the random number generator with the current time
+    srand(time(0));
+
+    // Open a file for writing
+    ofstream outfile("random_numbers.txt");
+
+    // Generate and write 10 random numbers to the file
+    for (int i = 0; i < 10; ++i) {
+        int random_number = rand() % 100 + 1; // Generate a random number between 1 and 100
+        outfile << random_number << endl;
+    }
+
+    outfile.close();
+    cout << "10 random numbers written to random_numbers.txt" << endl;
+
+    return 0;
+}
